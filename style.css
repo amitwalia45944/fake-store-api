@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    align-self: stretch;
+}
+
+:root {
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: gray;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+nav {
+    background-color: #f3faff;
+    box-shadow: 0 0 4px #bbd0e2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 80vw;
+    gap: 2rem;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+.primary-button {
+    background-color: rgb(4, 119, 4);
+    border-radius: 2rem;
+    font-weight: 700;
+    color: white !important;
+    padding: 0.8rem 1.5rem;
+    text-align: center;
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 8px;
+}
+
+.company-logo img {
+    width: 8vw;
+    height: 8vh;
+    border-radius: 20%;
+}
+
+.nav-links {
+    align-self: center;
+}
+
+.nav-links ul {
+    gap: 2rem;
+}
+
+.hover-link {
+    cursor: pointer;
+}
+
+.hover-link:hover {
+    color: var(--secondary-text-color);
+}
+
+.hover-link:active {
+    color: rgb(32, 137, 207);
+}
+
+.nav-item.active {
+    color: var(--accent-color);
+}
+
+main {
+    padding-block: 4rem;
+    margin-top: 80px;
+}
+
+.cards-container {
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    align-items: start;
+}
+
+.card {
+    flex-basis: 30%;
+    box-shadow: 0 0 10px #92989e;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 8px #d4ecff;
+    background-color: #f9fdff;
+    transform: translateY(-2px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+}
+
+.card-header img {
+    height: 15rem;
+    width: 15rem;
+}
+
+.card-content {
+    padding: 2rem;
+    align-self: stretch;
+}
+
+.card-content h1,
+h3,
+h6,
+p,
+h2,
+button {
+    margin-top: 1rem;
+}
+
+
+.inner-container {
+    background-color: #f3faffcc;
+    justify-content: space-evenly;
+}
+
+.sub-footer-1 {
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.company-logo-img-footer img {
+    width: 10vh;
+    border-radius: 20%;
+
+}
+
+.social-image {
+    gap: 2rem;
+}
+
+.sub-footer-3 {
+    align-self: center;
+}
+
+.sub-footer-3 ul {
+    gap: 6rem;
+}
+
+.sub-footer-4 {
+    flex-direction: column;
+    align-self: center;
+}
+
+.sub-footer-4 {
+    gap: 1rem;
+
+}
+
+.product-comment {
+    align-self: flex-end;
+}

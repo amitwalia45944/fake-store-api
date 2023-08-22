@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>product App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./favicon/android-chrome-512x512.png" type="image/x-icon">
+</head>
+
+<body>
+
+  <nav>
+    <div class="main-nav container flex">
+      <a href="#" onclick="reload()" class="company-logo">
+        <img src="./images/fashion-clothes-store-background_1308-53174.avif" alt="company logo">
+      </a>
+      <div class="nav-links">
+        <ul class="flex">
+          <li><a href="#" onclick="reload()" class="home primary-button">
+           Home </a></li>
+          <li class="hover-link nav-item" id="electronics" onclick="search_item('electronics')">Electronics</li>
+          <li class="hover-link nav-item" id="jewelery" onclick="search_item('jewelery')">Jewelery</li>
+          <li class="hover-link nav-item" id="men%27s%20clothing" onclick="search_item('men%27s%20clothing')">Men's
+            Clothing</li>
+          <li class="hover-link nav-item" id="women%27s%20clothing" onclick="search_item('women%27s%20clothing')">
+            Women's Clothing</li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+
+
+  <main>
+    <div class="cards-container container flex" id="cards-container">
+
+    </div>
+  </main>
+
+  <template id="template-product-card">
+    <div class="card">
+      <div class="card-header">
+        <img src="" alt="product-image" id="product-img">
+      </div>
+      <div class="card-content">
+        <h3 id="product-title"></h3>
+        <h1 class="product-price" id="product-price"></h1>
+        <p class="product-desc" id="product-desc"></p>
+        <h2 class="product-comment" id="product-comment"></h2>
+        <button class="product-rating primary-button" id="product-rating"></p>
+      </div>
+    </div>
+  </template>
+
+  <footer>
+    <div class="inner-container flex">
+      <div class="sub-footer-1 flex">
+        <div class="inner-1">
+          <a href="#" class="company-logo-img-footer">
+            <img src="./images/logo.png" alt="company logo">
+          </a>
+        </div>
+      </div>
+      
+      <div class="sub-footer-3">
+        <ul class="flex">
+          <li><a href="#" class="hover-link">Careers</a></li>
+          <li><a href="#" class="hover-link">Support</a></li>
+          <li><a href="#" class="hover-link">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="sub-footer-4 flex">
+        <a href="#" onclick="reload()" class="company-logo">
+          <img src="./images/fashion-clothes-store-background_1308-53174.avif" alt="company logo">
+        </a>
+        <div class="copyright">
+          <p>© Agni Shopping Cart. All Rights Reserved</p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
