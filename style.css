@@ -152,8 +152,13 @@ button {
     margin-top: 1rem;
 }
 
+.card-content h6 {
+    /* display: none; */
+}
 
-.inner-container {
+
+
+/* .inner-container {
     background-color: #f3faffcc;
     justify-content: space-evenly;
 }
@@ -194,4 +199,5 @@ button {
 
 .product-comment {
     align-self: flex-end;
-}
+} */
+

@@ -13,8 +13,32 @@ function fetch_item(url) {
         .then((response) => {
             return response.json();
         })
-        .then((next_response) => {
-            bind_data(next_response);
+        .then((products) => {
+            bind_data(products);
+
+            
+                let container_data = document.getElementById("cards-container"); 
+                container_data.addEventListener("click", (event) => {
+
+
+                const target_card = event.target.closest(".card");
+                console.log(target_card);
+
+                const clicked_product = target_card.querySelector(".product-id");
+                const pid_of_product = clicked_product.textContent.split(":")[1].trim();
+
+                const found_product = products.find((item) => {
+                    return item.id === parseInt(pid_of_product);
+                });
+
+                if (found_product) {
+                    console.log(found_product);
+                    display(found_product);
+                } else {
+                    console.log('not found');
+                }
+                container_data.style.display = 'none';
+            });
         })
         .catch((error) => {
             console.log(error);
@@ -24,12 +48,12 @@ function fetch_item(url) {
 
 function bind_data(products) {
     const cards_container = document.getElementById("cards-container");
-    const product_card_emplate = document.getElementById("template-product-card");
+    const product_card_template = document.getElementById("template-product-card");
 
     cards_container.innerHTML = "";
 
     products.map((product) => {
-        const card_clone = product_card_emplate.content.cloneNode(true);
+        const card_clone = product_card_template.content.cloneNode(true);
         fill_data_in_card(card_clone, product);
         cards_container.appendChild(card_clone);
         return;
@@ -42,24 +66,45 @@ function fill_data_in_card(card_clone, product) {
     const product_img = card_clone.querySelector("#product-img");
     const product_title = card_clone.querySelector("#product-title");
     let product_price = card_clone.querySelector("#product-price");
-    const product_desc = card_clone.querySelector("#product-desc");
-    let product_rating = card_clone.querySelector("#product-rating");
-    let product_comment = card_clone.querySelector("#product-comment");
+    let product_id = card_clone.querySelector("#product-id");
 
     product_img.src = product.image;
-    product_rating.innerHTML = product.rating["rate"] + ' ' + '⭐';
-
-    if (product.price < 50) {
-        product_comment.innerHTML = "🤩" + ' ' + 'low price';
-    } else {
-        product_comment.innerHTML = '😅' + ' ' + 'expensive one';
-    }
+    product_id.innerHTML = `product-id:${product.id}`;
 
     product_price.innerHTML = '$' + product.price;
     product_title.innerHTML = product.title;
-    const desc = product.description.slice(0, 100);
-    product_desc.innerHTML = desc;
+
 };
+
+
+function display(product) {
+
+    const views_container = document.getElementById("views-container");
+    const product_card_template = document.getElementById("template-product-card");
+
+    views_container.innerHTML = "";
+    const card_clone = product_card_template.content.cloneNode(true);
+    
+    const found_product_img = card_clone.querySelector("#product-img");
+    const found_product_title = card_clone.querySelector("#product-title");
+    let found_product_price = card_clone.querySelector("#product-price");
+    let found_product_id = card_clone.querySelector("#product-id");
+    let found_product_desc = card_clone.querySelector("#product-desc");
+    found_product_img.src = product.image;
+
+    found_product_id.innerHTML = `Rating: ${product.rating.rate}🌟 `; 
+
+    found_product_price.innerHTML = '$' + product.price;
+    found_product_title.innerHTML = product.title;
+   
+    const desc = product.description;
+
+    found_product_desc.innerHTML = desc;
+
+    views_container.appendChild(card_clone);
+    
+};
+
 
 let current_status = null;
 
