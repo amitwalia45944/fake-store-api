@@ -1,6 +1,8 @@
 const loader = document.getElementById("loader");
 let error_mssg = document.getElementById("error-message");
 
+const login_button = document.querySelector("#log-in");
+
 let url = 'https://fakestoreapi.com/products';
 
 window.addEventListener("load", () => {
@@ -62,7 +64,6 @@ function fetch_item(url) {
 };
 
 function show_no_product_message() {
-
     const mssg = document.getElementById("no-products-message");
     mssg.innerHTML = "No Products fetched from api";
     mssg.style.display = "block";
@@ -98,7 +99,6 @@ function fill_data_in_card(card_clone, product) {
 
 };
 
-
 function display(product) {
 
     const views_container = document.getElementById("views-container");
@@ -133,6 +133,7 @@ let current_status = null;
 function search_item(specific_category) {
     let container_data = document.getElementById("cards-container");
     container_data.style.display = 'flex';
+
     let category_url = `${url}/${'category'}/${specific_category}`;
 
     fetch_item(category_url);
@@ -143,3 +144,7 @@ function search_item(specific_category) {
     current_status = category;
     current_status.classList.add("active");
 };
+
+login_button.addEventListener("click", () => {
+    window.open(`${window.location.origin}/log-signup.html`, "_blank");
+});

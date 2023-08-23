@@ -5,13 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>product App</title>
+  <title>Shopping</title>
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="./favicon/android-chrome-512x512.png" type="image/x-icon">
 </head>
 
 <body>
-
   <nav>
     <div class="main-nav container flex">
       <a href="#" onclick="reload()" class="company-logo">
@@ -27,12 +26,13 @@
             Clothing</li>
           <li class="hover-link nav-item" id="women%27s%20clothing" onclick="search_item('women%27s%20clothing')">
             Women's Clothing</li>
+
+          <li><a href="#" class="sign-up primary-button" id = "log-in">
+            Sign-up </a></li>
         </ul>
       </div>
     </div>
-
   </nav>
-
 
   <main>
 
@@ -44,24 +44,23 @@
 
     </div>
 
+    <!-- for showing error part -->
     <div class="center-container">
       <div class="loader" id="loader">
-      
+
       </div>
-  
+
     </div>
-   
+
     <div class="center-container">
       <div class="no-products-message" id="no-products-message"></div>
     </div>
-    
-     
+
     </div>
     <div class="error-message" id="error-message">
 
     </div>
-
-
+    <!-- for showing error part -->
   </main>
 
   <template id="template-product-card">
@@ -77,39 +76,7 @@
       </div>
     </div>
   </template>
-
-
-
-  <!-- <footer>
-    <div class="inner-container flex">
-      <div class="sub-footer-1 flex">
-        <div class="inner-1">
-          <a href="#" class="company-logo-img-footer">
-            <img src="./images/logo.png" alt="company logo">
-          </a>
-        </div>
-      </div>
-      
-      <div class="sub-footer-3">
-        <ul class="flex">
-          <li><a href="#" class="hover-link">Careers</a></li>
-          <li><a href="#" class="hover-link">Support</a></li>
-          <li><a href="#" class="hover-link">Privacy Policy</a></li>
-        </ul>
-      </div>
-
-      <div class="sub-footer-4 flex">
-        <a href="#" onclick="reload()" class="company-logo">
-          <img src="./images/fashion-clothes-store-background_1308-53174.avif" alt="company logo">
-        </a>
-        <div class="copyright">
-          <p>© Agni Shopping Cart. All Rights Reserved</p>
-        </div>
-      </div>
-    </div>
-
-  </footer> -->
-
+  
   <script src="script.js"></script>
 </body>
 
