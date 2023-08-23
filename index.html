@@ -20,7 +20,7 @@
       <div class="nav-links">
         <ul class="flex">
           <li><a href="#" onclick="reload()" class="home primary-button">
-           Home </a></li>
+              Home </a></li>
           <li class="hover-link nav-item" id="electronics" onclick="search_item('electronics')">Electronics</li>
           <li class="hover-link nav-item" id="jewelery" onclick="search_item('jewelery')">Jewelery</li>
           <li class="hover-link nav-item" id="men%27s%20clothing" onclick="search_item('men%27s%20clothing')">Men's
@@ -35,13 +35,32 @@
 
 
   <main>
+
     <div class="cards-container container flex" id="cards-container">
 
     </div>
 
     <div class="views-container" id="views-container">
+
+    </div>
+
+    <div class="center-container">
+      <div class="loader" id="loader">
       
-  </div>
+      </div>
+  
+    </div>
+   
+    <div class="center-container">
+      <div class="no-products-message" id="no-products-message"></div>
+    </div>
+    
+     
+    </div>
+    <div class="error-message" id="error-message">
+
+    </div>
+
 
   </main>
 
@@ -59,7 +78,7 @@
     </div>
   </template>
 
-  
+
 
   <!-- <footer>
     <div class="inner-container flex">
