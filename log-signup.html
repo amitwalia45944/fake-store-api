@@ -10,45 +10,60 @@
 
 <body>
   <!-- For login signup page -->
-  
+  <div class="instructions">
+    <h1>Welcome to the sign-up page</h1>
+    <p class="field-instructions">*Required full name (at least 5 characters)</p>
+    <p class="field-instructions">*Required valid email address</p>
+    <p class="field-instructions">*Required At least 6 characters, including uppercase, lowercase, digit, and special character
+    </p>
+    <p class="field-instructions">You must agree to the terms and conditions</p>
+  </div>
+
+
   <div id="form-response" class="active">
     <p>Congratulations you have signed up successfuly</p>
   </div>
+  <main>
+    <div class="container flex">
+      <form class="" action="" name="log-in-form" onsubmit="validate(event)" method="post">
+        <div class="form-field" id="fname">
+          <label for="name">Name</label><br>
+          <input type="text" name="name"><br><b><span class="show-error"> </span></b>
+        </div>
 
-  <h1>Welcome to the sign-up page</h1>
-  <div class="container flex">
-    <form class="" action="" name="log-in-form" onsubmit="validate(event)" method="post">
-      <div class="form-field" id="fname">
-        <label for="name">Name</label><br>
-        <input type="text" name="name"><br><b><span class="show-error"> </span></b>
-      </div>
+        <div class="form-field" id="femail">
+          <label for="email">Email</label><br>
+          <input type="text" name="email"><br><b><span class="show-error"> </span></b>
+        </div>
 
-      <div class="form-field" id="femail">
-        <label for="email">Email</label><br>
-        <input type="text" name="email"><br><b><span class="show-error"> </span></b>
-      </div>
+        <div class="form-field" id="fphone">
+          <label for="phone">Mobile</label><br>
+          <input type="phone" name="phone"><br><b><span class="show-error"></span></b>
+        </div>
 
-      <div class="form-field" id="fphone">
-        <label for="phone">Mobile</label><br>
-        <input type="phone" name="phone"><br><b><span class="show-error"></span></b>
-      </div>
+        <div class="form-field" id="fpassword">
+          <label for="password">Password</label><br>
+          <input type="password" name="password"><br><b><span class="show-error"></span></b>
+        </div>
 
-      <div class="form-field" id="fpassword">
-        <label for="password">Password</label><br>
-        <input type="password" name="password"><br><b><span class="show-error"></span></b>
-      </div>
+        <div class="form-field" id="fconfirm-password">
+          <label for="confirm-password">Confirm Password</label><br>
+          <input type="password" name="confirm-password"><br><b><span class="show-error"></span></b>
+        </div>
 
-      <div class="form-field" id="fconfirm-password">
-        <label for="confirm-password">Confirm Password</label><br>
-        <input type="password" name="confirm-password"><br><b><span class="show-error"></span></b>
-      </div>
+        <div class="form-field" id="tick-box">
+          <input type="checkbox" id="agree-checkbox"><b><span class="show-error"></span></b><br>
+          <label for="agree-checkbox"> I agree to terms and conditions</label>
+        </div>
 
-      <input class="button" id="submit-button" type="submit" value="Submit">
-      <button class="button" type="reset">Reset</button>
-      
-    </form>
+        <input class="button" id="submit-button" type="submit" value="Submit">
+        <button class="button" id="reset-button" type="reset">Reset</button>
 
-  </div>
+      </form>
+
+    </div>
+  </main>
+
 
   <!-- For login signup page -->
   <script src="log-in/login.js"></script>
