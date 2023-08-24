@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-in page</title>
+  <link rel="stylesheet" href="./log-in-part/login-part.css">
+  <link rel="shortcut icon" href="./favicon/android-chrome-512x512.png" type="image/x-icon">
+</head>
+
+<body>
+  <!-- For login signup page -->
+ 
+  <h1>Welcome to the sign-in page</h1>
+
+  <div id="form-response" class="active">
+    <p>Congratulations you have signed in</p>
+  </div>
+
+  <main>
+    <div class="container flex">
+      <form class="" action="" name="log-in-form" onsubmit="validate(event)" method="post">
+
+        <div class="form-field" id="femail">
+          <label for="email">Email</label><br>
+          <input type="text" name="email"><br><b><span class="show-error"> </span></b>
+        </div>
+
+        <div class="form-field" id="fpassword">
+          <label for="password">Password</label><br>
+          <input type="password" name="password"><br><b><span class="show-error"></span></b>
+        </div>
+
+        <input class="button" id="submit-button" type="submit" value="Submit">
+       
+
+      </form>
+
+    </div>
+  </main>
+
+  <!-- For login signup page -->
+  <script src="log-in-part/login-part.js"></script>
+
+</body>
+
+</html>

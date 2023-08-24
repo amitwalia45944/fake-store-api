@@ -20,14 +20,14 @@ function clear_error() {
     let errors = document.getElementsByClassName('show-error');
 
     for (let item of errors) {
-        item.innerHTML = "";
+        item.textContent = "";
     }
 }
 
 function set_error(id, error) {
     let element = document.getElementById(id);
 
-    element.getElementsByClassName('show-error')[0].innerHTML = error;
+    element.getElementsByClassName('show-error')[0].textContent = error;
 }
 
 function validate(event) {
@@ -104,6 +104,8 @@ function validate(event) {
     }
 
     if (flag) {
+        localStorage.setItem('authenticatedEmail', email);
+        localStorage.setItem('authenticatedPassword', password);
         show_successful_mssg();
     }
 }

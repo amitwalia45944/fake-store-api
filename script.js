@@ -2,6 +2,7 @@ const loader = document.getElementById("loader");
 let error_mssg = document.getElementById("error-message");
 
 const login_button = document.querySelector("#log-in");
+const login_part_button = document.querySelector("#log-in-part");
 
 let url = 'https://fakestoreapi.com/products';
 
@@ -65,7 +66,7 @@ function fetch_item(url) {
 
 function show_no_product_message() {
     const mssg = document.getElementById("no-products-message");
-    mssg.innerHTML = "No Products fetched from api";
+    mssg.innerText = "No Products fetched from api";
     mssg.style.display = "block";
 }
 
@@ -73,7 +74,7 @@ function bind_data(products) {
     const cards_container = document.getElementById("cards-container");
     const product_card_template = document.getElementById("template-product-card");
 
-    cards_container.innerHTML = "";
+    cards_container.textContent = "";
 
     products.map((product) => {
         const card_clone = product_card_template.content.cloneNode(true);
@@ -92,10 +93,10 @@ function fill_data_in_card(card_clone, product) {
     let product_id = card_clone.querySelector("#product-id");
 
     product_img.src = product.image;
-    product_id.innerHTML = `product-id:${product.id}`;
+    product_id.textContent = `product-id:${product.id}`;
 
-    product_price.innerHTML = '$' + product.price;
-    product_title.innerHTML = product.title;
+    product_price.textContent = '$' + product.price;
+    product_title.textContent = product.title;
 
 };
 
@@ -104,7 +105,7 @@ function display(product) {
     const views_container = document.getElementById("views-container");
     const product_card_template = document.getElementById("template-product-card");
 
-    views_container.innerHTML = "";
+    views_container.textContent = "";
     const card_clone = product_card_template.content.cloneNode(true);
 
     const found_product_img = card_clone.querySelector("#product-img");
@@ -114,14 +115,14 @@ function display(product) {
     let found_product_desc = card_clone.querySelector("#product-desc");
     found_product_img.src = product.image;
 
-    found_product_id.innerHTML = `Rating: ${product.rating.rate}🌟 `;
+    found_product_id.textContent = `Rating: ${product.rating.rate}🌟 `;
 
-    found_product_price.innerHTML = '$' + product.price;
-    found_product_title.innerHTML = product.title;
+    found_product_price.textContent = '$' + product.price;
+    found_product_title.textContent = product.title;
 
     const desc = product.description;
 
-    found_product_desc.innerHTML = desc;
+    found_product_desc.innerText = desc;
 
     views_container.appendChild(card_clone);
 
@@ -147,4 +148,8 @@ function search_item(specific_category) {
 
 login_button.addEventListener("click", () => {
     window.open(`${window.location.origin}/log-signup.html`, "_blank");
+});
+
+login_part_button.addEventListener("click", ()=>{
+    window.open(`${window.location.origin}/log-signin.html`, "_blank");
 });
